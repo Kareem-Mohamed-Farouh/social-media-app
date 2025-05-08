@@ -48,14 +48,10 @@ export class NavbarComponent implements OnInit {
     });
   }
   ngOnChanges(): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    this.getUserData();
     this.userInfo = JSON.parse(localStorage.getItem('userInfo')!);
+    this.getUserData();
   }
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.userInfo = JSON.parse(localStorage.getItem('userInfo')!);
     this.getUserData();
   }
